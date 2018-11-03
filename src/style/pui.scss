@@ -1,0 +1,153 @@
+.pui {
+  color: #333333;
+  
+  /* button */
+  &-button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 6px 18px;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 8px;
+    &__primary {
+      color: #ffffff;
+      background-color: #ff0000;
+    }
+    &__default {
+      color: #ffffff;
+      background-color: #cccccc;
+    }
+  }
+
+  /* modal */
+  &-modal {
+    position: fixed;
+    z-index: 310;
+    left: 20%;
+    top: 6%;
+    width: 60%;
+    color: #333333;
+    background-color: #ffffff;
+    // 关闭按钮
+    &__close {
+      float: right;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 20px;
+      color: #000;
+      text-shadow: 0 1px 0 #fff;
+      opacity: .2;
+      padding: 0;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      -webkit-appearance: none;
+      margin-top: 2px;
+    }
+    &__header, &__body, &__footer {
+      padding: 9px 15px;
+    }
+    &__header {
+      border-bottom: 1px solid #eeeeee;
+      &-title {
+        margin: 0;
+        line-height: 30px;
+        font-size: 24px;
+      }
+    }
+    &__body {
+      height: 400px;
+      overflow-y: scroll;
+      overflow-x: auto;
+    }
+    &__footer {
+      margin-bottom: 0;
+      text-align: right;
+      border-top: 1px solid #dddddd;
+    }
+    // 遮罩层
+    &__backdrop {
+      position: fixed;
+      z-index: 300;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #000000;
+      opacity: 0.8;
+    }
+  }
+
+  /* table */
+  &-table {
+    $table-color: #eeeeee;
+    text-align: center;
+    width: 100%;
+    border-collapse: collapse;
+    border-left: 1px solid $table-color;
+    border-top: 1px solid $table-color;
+    th, td {
+      border-right: 1px solid $table-color;
+      border-bottom: 1px solid $table-color;
+    }
+    th {
+      padding: 8px 0;
+      font-size: 16px;
+    }
+    td {
+      padding: 6px 0;
+      font-size: 14px;
+    }
+    &__thead {
+      font-size: 16px;
+      font-weight: normal;
+      background-color: #efefef;
+    }
+    &__row {
+      font-size: 14px;
+      font-weight: normal;
+    }
+    &__child {
+      padding: 1px 5px 10px 5px !important;
+      th {
+        font-size: 14px;
+      }
+      td {
+        font-size: 12px;
+      }
+    }
+    // 表格行条纹，奇数
+    &__row-odd {
+      background-color: #efefef;
+    }
+    // 表格行条纹，偶数
+    &__row-even {
+      background-color: #ffffff;
+    }
+  }
+
+  /* pagination */
+  &-pagination {
+    text-align: left;
+    margin: 8px 4px;
+    &__prev, &__next {
+      border: none;
+      outline: none;
+      background-color: #a0a0a0;
+      color: #ffffff;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    &__content {
+      color: #333333;
+      font-size: 12px;
+      padding: 0 4px;
+    }
+  }
+  
+}

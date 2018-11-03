@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>模态框-嵌套表格</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../index.scss" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/pui.scss" />
+  <script src="../lib/jquery.js"></script>
+</head>
+<body>
+  <div class="pui-modal">
+    <div class="pui-modal__header">
+      <div class="pui-modal__close">×</div>
+      <h2 class="pui-modal__header-title">标题</h2>
+    </div>
+    <div class="pui-modal__body">
+      <table class="pui-table">
+        <tr class="pui-table__thead">
+          <th>退款单号</th><th>订单号</th><th>总金额</th>
+        </tr>
+        <tr class="pui-table__row" title="点击打开详情">
+          <td>tk_14234234234324</td><td>dd_14234234234324</td><td>899.00</td>
+        </tr>
+        <tr class="pui-table__row" style="display: table-row;">
+          <td class="pui-table__child" colspan="3">
+            <div class="">
+              <table class="pui-table">
+                <tr class="pui-table__thead">
+                  <th>姓名</th><th>身份证号码</th><th>手机号码</th><th>缴费单号</th><th>缴费年限</th>
+                </tr>
+                <tr class="pui-table__row">
+                  <td>张三</td><td>430703199901012222</td><td>13112341234</td><td>jf_234123423432</td><td>2018</td>
+                </tr>
+                <tr class="pui-table__row">
+                  <td>张三</td><td>430703199901012222</td><td>13112341234</td><td>jf_234123423432</td><td>2018</td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      
+        <tr class="pui-table__row" title="点击打开详情">
+          <td>tk_14234234234324</td><td>dd_14234234234324</td><td>899.00</td>
+        </tr>
+      </table>
+
+      <div class="pui-pagination">
+        <button class="pui-pagination__prev">上一页</button>
+        <span class="pui-pagination__content">1/10</span>
+        <button class="pui-pagination__next">下一页</button>
+      </div>
+    </div>
+
+    <div class="pui-modal__footer">
+      <button class="pui-button pui-button__primary pui-button__confirm">确认</button>
+      <button class="pui-button pui-button__default pui-button__cacel">取消</button>
+    </div>
+  </div>
+  <div class="pui-modal__backdrop"></div>
+
+  <script src="../js/pagination.js"></script>
+  <script src="../js/modal.js"></script>
+  <script>
+    var modal = new puiModal({
+      wrapperSelector: 'body',
+      handleCloseCallback: function() {
+        console.log('modal close.')
+      },
+      handleConfirmCallback: function() {
+        console.log('modal confirm.')
+      }
+    });
+    modal.init();
+
+    var pagination = new puiPagination({
+      wrapperSelector: 'body',
+      currentPage: 1,
+      totalPage: 10,
+      handlePrevCallback: function(pagination) {
+        var currentPage = pagination.currentPage;
+        var totalPage = pagination.totalPage;
+        this.update({currentPage: currentPage - 1, totalPage: totalPage});
+      },
+      handleNextCallback: function(pagination) {
+        var currentPage = pagination.currentPage;
+        var totalPage = pagination.totalPage;
+        this.update({currentPage: currentPage + 1, totalPage: totalPage});
+      }
+    });
+    pagination.init();
+  </script>
+</body>
+</html>

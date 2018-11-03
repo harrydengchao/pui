@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>分页器</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../index.scss" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/pui.scss" />
+  <script src="../lib/jquery.js"></script>
+</head>
+<body>
+  <div class="pui-pagination">
+    <button class="pui-pagination__prev">上一页</button>
+    <span class="pui-pagination__content">1/10</span>
+    <button class="pui-pagination__next">下一页</button>
+  </div>
+
+  <script src="../js/pagination.js"></script>
+  <script>
+    var pagination = new puiPagination({
+      wrapperSelector: 'body',
+      currentPage: 1,
+      totalPage: 10,
+      handlePrevCallback: function(pagination) {
+        var currentPage = pagination.currentPage;
+        var totalPage = pagination.totalPage;
+        this.update({currentPage: currentPage - 1, totalPage: totalPage});
+      },
+      handleNextCallback: function(pagination) {
+        var currentPage = pagination.currentPage;
+        var totalPage = pagination.totalPage;
+        this.update({currentPage: currentPage + 1, totalPage: totalPage});
+      }
+    });
+    pagination.init();
+  </script>
+</body>
+</html>

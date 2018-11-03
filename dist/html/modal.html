@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>模态框</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../index.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/pui.css" />
+  <script src="../lib/jquery.js"></script>
+</head>
+<body>
+  <div>
+    <button class="open-modal">打开</button>
+  </div>
+
+  <div class="app">
+    <div class="pui-modal">
+      <div class="pui-modal__header">
+        <div class="pui-modal__close">×</div>
+        <h2 class="pui-modal__header-title">标题</h2>
+      </div>
+      <div class="pui-modal__body">
+        <div>asdfsadf</div>
+      </div>
+
+      <div class="pui-modal__footer">
+        <button class="pui-button pui-button__primary pui-button__confirm">确认</button>
+        <button class="pui-button pui-button__default pui-button__cacel">取消</button>
+      </div>
+    </div>
+    <div class="pui-modal__backdrop"></div>
+  </div>
+
+  <script src="../js/modal.js"></script>
+  <script>
+    var modal = new puiModal({
+      wrapperSelector: '.app',
+      handleCloseCallback: function() {
+        console.log('modal close.')
+      },
+      handleConfirmCallback: function() {
+        console.log('modal confirm.')
+      }
+    });
+    modal.init();
+
+    $('.open-modal').on('click', function() {
+      modal.open();
+    });
+  </script>
+</body>
+</html>

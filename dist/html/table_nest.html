@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>表格-嵌套</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../index.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/pui.css" />
+  <script src="../lib/jquery.js"></script>
+</head>
+<body>
+  <table class="pui-table">
+    <tr class="pui-table__thead">
+      <th>退款单号</th><th>订单号</th><th>总金额</th>
+    </tr>
+    <tr class="pui-table__row">
+      <td>tk_14234234234324</td><td>dd_14234234234324</td><td>899.00</td>
+    </tr>
+    <tr class="pui-table__row" style="display: table-row;">
+      <td class="pui-table__child" colspan="3">
+        <div class="">
+          <table class="pui-table">
+            <tr class="pui-table__thead">
+              <th>姓名</th><th>身份证号码</th><th>手机号码</th><th>缴费单号</th><th>缴费年限</th>
+            </tr>
+            <tr class="pui-table__row">
+              <td>张三</td><td>430703199901012222</td><td>13112341234</td><td>jf_234123423432</td><td>2018</td>
+            </tr>
+            <tr class="pui-table__row">
+              <td>张三</td><td>430703199901012222</td><td>13112341234</td><td>jf_234123423432</td><td>2018</td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  
+    <tr class="pui-table__row">
+      <td>tk_14234234234324</td><td>dd_14234234234324</td><td>899.00</td>
+    </tr>
+  </table>
+
+</body>
+</html>
