@@ -1,5 +1,5 @@
-# easy-modal-table
-一个简单的 弹框浮层，内嵌表格
+# pui
+一个简单的，兼容IE6的UI，依赖jQuery
 
 ---
 
