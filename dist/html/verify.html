@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>验证码功能</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="../index.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../style/pui.css" />
+  <script src="../lib/jquery.js"></script>
+</head>
+<body>
+  <div>
+    <button class="reset">重置</button>
+  </div>
+
+  <div class="pui-verify">
+    <img class="verify__image" src="../assets/images/verify.jpg" alt="">
+  </div>
+
+  <script src="../js/verify.js"></script>
+  <script>
+    // 使用示例
+    $(function() {
+      var verify = new Verify({
+        wrapperSelector: '.pui-verify',
+        imageSelector: '.verify__image',
+        handleChecked: function(position) {
+          console.log(position);
+        }
+      });
+
+      $('.reset').on('click', function() {
+        verify.reset();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "name": "default",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Default template for fis scaffold",
   "main": "index.js",
   "scripts": {

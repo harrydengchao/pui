@@ -1,5 +1,6 @@
 .pui {
   color: #333333;
+  font-size: 14px;
   
   /* button */
   &-button {
@@ -149,5 +150,30 @@
       padding: 0 4px;
     }
   }
+  
+  /* verify */
+  &-verify {
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+  }
+  &-verify__checked {
+    $checked-size: 28px;
+    width: $checked-size;
+    height: $checked-size;
+    line-height: $checked-size;
+    margin-top: -($checked-size/2);
+    margin-left: -($checked-size/2);
+    border-radius: 100%;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+  }
+
   
 }
